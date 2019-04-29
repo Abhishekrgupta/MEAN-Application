@@ -1,0 +1,53 @@
+.navbar-default{
+  background-color: #333333;
+  min-height: 60px;
+  border:none;
+}
+
+.container-fluid{
+  padding-top: 8px;
+}
+
+.navbar-default .navbar-nav li a{
+  color:whitesmoke;
+  font-size: 17px;
+}
+
+.navbar-default .navbar-nav li a:hover{
+  background-color:#999999;
+  color:white;
+}
+
+.navbar-default .navbar-nav .open a{
+  background-color:#999999;
+  color:white;
+}
+
+.dropdown-toggle a:hover{
+  background-color:black;
+}
+
+.dropdown-menu{
+  border: none;
+  min-width: 131px;
+  padding: 0px;
+}
+
+.dropdown .dropdown-menu li a:hover{
+  color:white;
+  background: #999999;
+}
+
+.logout-menu{
+  float:right;
+}
+
+.main-content{
+  min-height: 505px;
+}
+
+.footer{
+  background-color: #ffcb08;
+  min-height: 20px;
+  margin-top: 20px;
+}

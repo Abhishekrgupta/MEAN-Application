@@ -1,0 +1,81 @@
+<div class="row">
+    <div class="col-md-12 info-form">
+        <div class="col-md-2">
+
+        </div>
+
+        <div class="col-md-8">
+            <h3 class="perinfo-title">My PersonalInfo</h3>
+            <table class="table table-bordered table-striped">
+                <tbody>
+                      <tr>
+                        <td>PersonalInfo Id</td>
+                        <td>{{this.personalInfo.personinfoId}}</td>
+                      </tr> 
+                      <tr>
+                        <td>Full Name</td>
+                        <td>{{this.personalInfo.fullName.firstName}} {{this.personalInfo.fullName.middleName}} {{this.personalInfo.fullName.lastName}}</td>
+                      </tr> 
+                      <tr>
+                        <td>Gender</td>
+                        <td>{{this.personalInfo.gender}}</td>
+                      </tr>
+                      <tr>
+                        <td>Date Of Birth</td>
+                        <td>{{this.personalInfo.dateOfBirth}}</td>
+                      </tr>
+                      <tr>
+                        <td>Age</td>
+                        <td>{{this.personalInfo.age}}</td>
+                      </tr> 
+                      <tr>
+                        <td>Address</td>
+                        <td>{{this.personalInfo.address.flatNumber}}, {{this.personalInfo.address.societyName}}, {{this.personalInfo.address.areaName}}</td>
+                      </tr>
+                      <tr>
+                        <td>City</td>
+                        <td>{{this.personalInfo.city}}</td>
+                      </tr>
+                      <tr>
+                        <td>State</td>
+                        <td>{{this.personalInfo.state}}</td>
+                      </tr>
+                      <tr>
+                        <td>Pin</td>
+                        <td>{{this.personalInfo.pincode}}</td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td>{{this.personalInfo.email}}</td>
+                      </tr>
+                      <tr>
+                        <td>Phone</td>
+                        <td>{{this.personalInfo.phoneNo}}</td>
+                      </tr>
+                      <tr>
+                        <td>Mobile</td>
+                        <td>{{this.personalInfo.mobileNo}}</td>
+                      </tr>
+                      <tr>
+                        <td>Physical Disablity</td>
+                        <td>{{this.personalInfo.physicalDisability}}</td>
+                      </tr>
+                      <tr>
+                        <td>Marital Status</td>
+                        <td>{{this.personalInfo.maritalStatus}}</td>
+                      </tr>
+                      <tr>
+                        <td>Education</td>
+                        <td>{{this.personalInfo.education}}</td>
+                      </tr>
+                      <tr>
+                        <td>Birth Sign</td>
+                        <td>{{this.personalInfo.birthSign}}</td>
+                      </tr>   
+                </tbody>
+            </table>
+
+             <input type="button" value="Update" class="btn btn-success" (click)="updateInfo(this.personalInfo.userId)"/>
+        </div>
+    </div>
+</div>

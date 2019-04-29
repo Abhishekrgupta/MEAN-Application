@@ -1,0 +1,194 @@
+
+  <div class="col-md-12 info-form">
+      <div class="error">{{this.error}}</div>
+      <div class="success">{{this.success}}</div>
+      <form name="frmUser" [formGroup]="frmPrsninfo" (submit)="addPersonalInfo()">
+          <div class="row">
+                <div class="form-group col-md-12">
+                    <label for="firstName">PersonlInfo Id </label>
+                    <input type="text" class="form-control" id="personalinfoId" name="personalinfoId" formControlName="personalinfoId" [(ngModel)]="personalInfo.personalinfoId" disabled/>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group col-md-4">
+                      <label for="firstName"> First Name </label>
+                      <input type="text" class="form-control" id="firstName" name="firstName" formControlName="firstName" [(ngModel)]="personalInfo.firstName"/>
+                      <div *ngIf="frmPrsninfo.controls.firstName.dirty && !frmPrsninfo.controls.firstName.valid" class="alert alert-danger" >
+                            <p *ngIf="frmPrsninfo.controls.firstName.errors.required">First Name is required</p>
+                            <p *ngIf="frmPrsninfo.controls.firstName.errors.pattern">Enter valid first name</p>
+                      </div>
+                  </div>
+
+                  <div class="form-group col-md-4">
+                      <label for="middleName"> Middle Name </label>
+                      <input type="text" class="form-control" id="middleName" name="middleName" formControlName="middleName" [(ngModel)]="personalInfo.middleName"/>
+                      <div *ngIf="frmPrsninfo.controls.middleName.dirty && !frmPrsninfo.controls.middleName.valid" class="alert alert-danger" >
+                            <p *ngIf="frmPrsninfo.controls.middleName.errors.required">Middle Name is required</p>
+                            <p *ngIf="frmPrsninfo.controls.middleName.errors.pattern">Enter valid middle name</p>
+                      </div>
+                  </div>
+
+                  <div class="form-group col-md-4">
+                      <label for="lastName"> Last Name </label>
+                      <input type="text" class="form-control" id="lastName" name="lastName" formControlName="lastName" [(ngModel)]="personalInfo.lastName"/>
+                      <div *ngIf="frmPrsninfo.controls.lastName.dirty && !frmPrsninfo.controls.lastName.valid" class="alert alert-danger" >
+                            <p *ngIf="frmPrsninfo.controls.lastName.errors.required">Last Name is required</p>
+                            <p *ngIf="frmPrsninfo.controls.lastName.errors.pattern">Enter valid last name</p>
+                      </div>
+                  </div>
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="form-group col-md-4">
+                        <label for="gender"> Gender </label>
+                        <select class="form-control" id="gender" name="gender" formControlName="gender" [(ngModel)]="personalInfo.gender">
+                            <option value="Male"> Male </option>
+                            <option value="Female">Female</option>
+                        </select>
+                        <div *ngIf="frmPrsninfo.controls.gender.touched && !frmPrsninfo.controls.gender.valid" class="alert alert-danger">
+                            <p *ngIf="frmPrsninfo.controls.gender.errors.selecrequired">Gender is required</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="dob"> Date of Birth </label>
+                        <input type="date" id="dateOfBirth" class="form-control" name="dateOfBirth" formControlName="dateOfBirth" [(ngModel)]="personalInfo.dateOfBirth" />
+                        <div *ngIf="frmPrsninfo.controls.dateOfBirth.touched && !frmPrsninfo.controls.dateOfBirth.valid" class="alert alert-danger">
+                            <p *ngIf="frmPrsninfo.controls.dateOfBirth.errors.required">DOB is required</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="age"> Age </label>
+                        <input type="text" id="age" class="form-control" name="age" formControlName="age" [(ngModel)]="personalInfo.age"/>
+                        <div *ngIf="frmPrsninfo.controls.age.dirty && !frmPrsninfo.controls.age.valid" class="alert alert-danger" >
+                              <p *ngIf="frmPrsninfo.controls.age.errors.required">Age is required</p>
+                              <p *ngIf="frmPrsninfo.controls.age.errors.pattern">Enter valid age</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12">
+                    <label for="add"> Address </label>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group col-md-3">
+                      <label for="flatNo"> Flat No </label>
+                      <input type="text" id="flatNo" class="form-control" name="flatNumber" formControlName="flatNumber" [(ngModel)]="personalInfo.flatNumber"/>
+                      <div *ngIf="frmPrsninfo.controls.flatNumber.dirty && !frmPrsninfo.controls.flatNumber.valid" class="alert alert-danger" >
+                            <p *ngIf="frmPrsninfo.controls.flatNumber.errors.required">Flat No. is required</p>
+                      </div>
+                  </div>
+
+                  <div class="form-group col-md-4">
+                      <label for="societyName"> Society Name</label>
+                      <input type="text" id="societyName" class="form-control" name="societyName" formControlName="societyName" [(ngModel)]="personalInfo.societyName"/>
+                      <div *ngIf="frmPrsninfo.controls.societyName.dirty && !frmPrsninfo.controls.societyName.valid" class="alert alert-danger" >
+                            <p *ngIf="frmPrsninfo.controls.societyName.errors.required">Society Name is required</p>
+                      </div>
+                  </div>
+
+                  <div class="form-group col-md-5">
+                      <label for="areaName"> Area Name</label>
+                      <input type="text" id="areaName" class="form-control" name="areaName" formControlName="areaName" [(ngModel)]="personalInfo.areaName"/>
+                      <div *ngIf="frmPrsninfo.controls.areaName.dirty && !frmPrsninfo.controls.areaName.valid" class="alert alert-danger" >
+                            <p *ngIf="frmPrsninfo.controls.areaName.errors.required">Area Name is required</p>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class=" form-group col-md-4">
+                      <label for="city"> City </label>
+                      <input type="text" id="city" class="form-control" name="city" formControlName="city" [(ngModel)]="personalInfo.city"/>
+                      <div *ngIf="frmPrsninfo.controls.city.dirty && !frmPrsninfo.controls.city.valid" class="alert alert-danger" >
+                            <p *ngIf="frmPrsninfo.controls.city.errors.required">City is required</p>
+                      </div>
+                  </div>
+
+                  <div class="form-group col-md-4">
+                      <label for="state"> State</label>
+                      <input type="text" id="state" class="form-control" name="state" formControlName="state" [(ngModel)]="personalInfo.state"/>
+                      <div *ngIf="frmPrsninfo.controls.state.dirty && !frmPrsninfo.controls.state.valid" class="alert alert-danger" >
+                            <p *ngIf="frmPrsninfo.controls.state.errors.required">State is required</p>
+                      </div>
+                  </div>
+
+                  <div class="form-group col-md-4">
+                      <label for="pin"> PIN </label>
+                      <input type="text" id="pin" class="form-control" name="pincode" formControlName="pincode" [(ngModel)]="personalInfo.pincode"/>
+                      <div *ngIf="frmPrsninfo.controls.pincode.dirty && !frmPrsninfo.controls.pincode.valid" class="alert alert-danger" >
+                            <p *ngIf="frmPrsninfo.controls.pincode.errors.required">Pincode is required</p>
+                            <p *ngIf="frmPrsninfo.controls.pincode.errors.pattern">Enter valid pincode</p>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group col-md-4">
+                      <label for="email"> Email </label>
+                      <input type="text" id="email" class="form-control" name="email" formControlName="email" [(ngModel)]="personalInfo.email"/>
+                      <div *ngIf="frmPrsninfo.controls.email.dirty && !frmPrsninfo.controls.email.valid" class="alert alert-danger" >
+                          <p *ngIf="frmPrsninfo.controls.email.errors.required">Email is required</p>
+                          <p *ngIf="frmPrsninfo.controls.email.errors.pattern">Enter valid email</p>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-4">
+                      <label for="phone"> Phone No </label>
+                      <input type="text" id="pin" class="form-control" name="phoneNo" formControlName="phoneNo" [(ngModel)]="personalInfo.phoneNo"/>
+                  </div>
+
+                  <div class="form-group col-md-4">
+                      <label for="phone"> Mobile No </label>
+                      <input type="text" id="mobile" class="form-control" name="mobileNo" formControlName="mobileNo" [(ngModel)]="personalInfo.mobileNo"/>
+                      <div *ngIf="frmPrsninfo.controls.mobileNo.dirty && !frmPrsninfo.controls.mobileNo.valid" class="alert alert-danger" >
+                            <p *ngIf="frmPrsninfo.controls.mobileNo.errors.required">Mobilr No. is required</p>
+                            <p *ngIf="frmPrsninfo.controls.mobileNo.errors.pattern">Enter valid mobile no</p>
+                            <p *ngIf="frmPrsninfo.controls.mobileNo.errors.maxlength">Mobile no. not more than 10 char. </p>
+                            <p *ngIf="frmPrsninfo.controls.mobileNo.errors.minlength">Mobile no. not less than 10 char. </p>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group col-md-6">
+                      <label for="physicalDisablity"> Physical Disability</label>
+                      <input type="text" id="physicalDisablity" class="form-control" name="physicalDisability" formControlName="physicalDisability" [(ngModel)]="personalInfo.physicalDisability"/>
+                  </div>
+
+                  <div class="form-group col-md-6">
+                      <label for="maritalStatus"> Marital Status</label>
+                      <select name="maritalStatus" id="maritalStatus" class="form-control" formControlName="maritalStatus" [(ngModel)]="personalInfo.maritalStatus">
+                          <option value="Unmarried"> Unmarried </option>
+                          <option value="Married"> Married </option>
+                      </select>
+                      <div *ngIf="frmPrsninfo.controls.maritalStatus.touched && !frmPrsninfo.controls.maritalStatus.valid" class="alert alert-danger">
+                          <p *ngIf="frmPrsninfo.controls.maritalStatus.errors.selecrequired">Marital Status is required</p>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group col-md-6">
+                      <label for="educationStatus"> Educational</label>
+                      <input type="text" id="education" class="form-control" name="education" formControlName="education" [(ngModel)]="personalInfo.education"/>
+                      <div *ngIf="frmPrsninfo.controls.education.dirty && !frmPrsninfo.controls.education.valid" class="alert alert-danger" >
+                          <p *ngIf="frmPrsninfo.controls.education.errors.required">Education is required</p>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-6">
+                      <label for="birthSign"> Birth Sign</label>
+                      <input type="text" id="birthSign" class="form-control" name="birthSign" formControlName="birthSign" [(ngModel)]="personalInfo.birthSign"/>
+                  </div>
+                </div>
+
+                <input type="submit" value="Submit" [disabled]="!frmPrsninfo.valid" class="btn btn-success" />&nbsp;&nbsp;&nbsp;
+                <input type="button" value="Clear" class="btn btn-primary" />
+
+            </div>
+      </form>
+  </div>
+

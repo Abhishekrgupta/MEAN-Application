@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-md-12 info-form">
+            <div class="form-group col-md-6">
+                <form class="form-inline">
+                    <label for="gender"> Select Status :  &nbsp;&nbsp;&nbsp;</label>
+                    <select class="form-control" name="status" [(ngModel)]="selectedStatus" (change)="getPersonalInfoList()">
+                        <option value="approved"> Approved </option>
+                        <option value="pending"> Pending </option>
+                        <option value="rejected"> Rejected </option>
+                    </select>
+                </form>
+            </div>
+
+            <div class="form-group col-md-4 search-box">
+                <input class="form-control"  [(ngModel)]="searchText" placeholder="Search..."> 
+                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+               
+            </div>
+    
+        <div class="col-md-12 info-table">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>User Id</th>
+                        <th>PersonalInfo Id</th>
+                        <th>Full Name</th>
+                        <th>DOB</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                        <th>City</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let p of personalInfoList | search:searchText">
+                    <td>{{p.userId}}</td>
+                    <td>{{p.personinfoId}}</td>
+                    <td>{{p.fullName}}</td>
+                    <td>{{p.dob}}</td>
+                    <td>{{p.mobile}}</td>
+                    <td>{{p.email}}</td>
+                    <td>{{p.city}}</td>
+                    <td>
+                        <button class="btn btn-success" (click)="approveInfo(p.userId)" *ngIf="p.status==='pending' || p.status==='rejected'">Approve</button>&nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-danger" (click)="rejectInfo(p.userId)" *ngIf="p.status==='pending'">Reject</button>&nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-warning" (click)="moreInfo(p.userId)" *ngIf="p.status==='approved'">View More..</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

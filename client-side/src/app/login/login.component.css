@@ -1,0 +1,16 @@
+.login-container{
+  margin-top: 10%;
+  margin-left: 35%;
+  padding: 60px;
+  opacity: 0.9;
+  background-color:#333333;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.3);
+  color: whitesmoke;
+  border-radius: 25px;
+}
+
+.login-container h2{
+  margin-top: 0px;
+  text-align: center;
+}
+
